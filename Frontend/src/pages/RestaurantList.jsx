@@ -11,10 +11,6 @@ const RestaurantList = () => {
         <button><img src="../src/assets/search.svg" alt="search" /></button>
       </div>
       <div className="body">
-        <div className="filter">
-          <h1>Filter</h1>
-          <Filters />
-        </div>
         <div className="restaurant-list">
           <Restaurants />
         </div>

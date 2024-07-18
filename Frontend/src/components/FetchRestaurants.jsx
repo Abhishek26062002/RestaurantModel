@@ -1,29 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetchRestaurant = (id = null) => {
-  const [data, setData] = useState(id ? null : []);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const useFetchRestaurant = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchRestaurant = async () => {
-      try {
-        const response = id
-          ? await axios.get(`http://localhost:8000/restaurants/${id}`)
-          : await axios.get('http://localhost:8000/restaurants');
-        setData(response.data);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
-      }
-    };
+    useEffect(() => {
+        const fetchRestaurants = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/restaurants');
+                setData(response.data);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchRestaurant();
-  }, [id]);
+        fetchRestaurants();
+    }, []);
 
-  return { data, loading, error };
+    return { data, loading, error };
 };
 
 export default useFetchRestaurant;
