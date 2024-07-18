@@ -1,16 +1,20 @@
 import pandas as pd
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 
 DATABASE_URL = 'postgresql://postgres:Abhishek@localhost:5435/TypeFace'
 
 engine = create_engine(DATABASE_URL)
 
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
 
 data_file = r"C:\Users\abhishek\Documents\Carrer\TypeFace\task-Abhishek26062002\new_data.json"
 
-data = pd.read_json(data_file)
-
+"""data = pd.read_json(data_file)
 
 
 def flatten_dict_column(df, col_name):
@@ -26,7 +30,18 @@ for col in data.columns:
         data = data.drop(columns=[col]).join(flattened)
         
         
-data = data.applymap(lambda x: str(x) if isinstance(x, (dict, list)) else x)
+data = data.applymap(lambda x: str(x) if isinstance(x, (dict, list)) else x)"""
 
 
-data.to_sql('restaurants', engine, if_exists='replace', index=False)
+
+Base = declarative_base()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+#data.to_sql('restaurants', engine, if_exists='replace', index=False)

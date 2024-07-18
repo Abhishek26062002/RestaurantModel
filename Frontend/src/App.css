@@ -1,0 +1,56 @@
+.video
+{
+    aspect-ratio: 16/9;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+.title
+{
+    height: 120vh;
+    width: 40vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.title h1
+{
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: rgb(125, 88, 20);
+}
+.title button
+{
+    height: 70px;
+    width: 300px;
+    background: linear-gradient(90deg, #543315 0%, #BA712F 100%);
+    color: white;
+    font-size: 2rem;
+    border-radius: 30px;
+    border: none;
+}
+@media screen and (max-width: 768px)
+{
+    .title
+    {
+        width: 100%;
+    }
+    .title h1
+    {
+        font-size: 2rem;
+    }
+    .title button
+    {
+        height: 50px;
+        width: 200px;
+        font-size: 1.5rem;
+    }
+    
+}
