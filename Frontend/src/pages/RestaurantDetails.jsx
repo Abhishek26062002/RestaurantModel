@@ -1,42 +1,47 @@
 import React from 'react';
 import './RestaurantDetails.css';
 import { useParams } from 'react-router-dom';
+import useFetchRestaurant from '../components/FetchRestaurants'; // Import the custom hook
+
 
 const RestaurantDetails = () => {
-    const { id } = useParams();
+    const { data: restaurants, loading, error } = useFetchRestaurant(); 
 
-    // Assuming you have a function to fetch restaurant details by ID from an API or data source
-    const fetchRestaurantDetails = (id) => {
-        // Simulated data fetching, replace with actual API call
-        return {
-            img: `https://via.placeholder.com/150?id=${id}`,
-            name: "Restaurant Name",
-            country: "Country Name",
-            cuisines: "Cuisine Type",
-            cost: "$ Cost",
-            rating: "⭐⭐⭐⭐"
-        };
-    };
-
-    const restaurant = fetchRestaurantDetails(id);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error fetching restaurant details: {error.message}</p>;
 
     return (
-        <div className="restaurant-details-container">
-            <div className="background-image">
-                <div className="profile-pic-box">
-                    <img src={restaurant.img} alt="Profile" />
-                    <h2>{restaurant.name}</h2>
+        <div className="restaurant-list-container">
+            {restaurants.map(restaurant => (
+                <div key={restaurant.id} className="restaurant-details-container">
+                    <div className="background-image">
+                        <div className="profile-pic-box">
+                            <img src={restaurant.thumb} alt={restaurant.name} />
+                            <h2>{restaurant.name}</h2>
+                        </div>
+                    </div>
+                    <div className="details-section">
+                        <div className="restaurant-info">
+                            <h3>Restaurant Information</h3>
+                            <p>Name: {restaurant.name}</p>
+                            <p>Cuisines: {restaurant.cuisines}</p>
+                            <p>Cost for Two: {restaurant.average_cost_for_two}</p>
+                            <p>Rating: {restaurant.user_rating_aggregate_rating}</p>
+                            <p>City : {restaurant.location_city}</p>
+                            <p>Adress : {restaurant.location_address}</p>
+                        </div>
+                        <div className="menu">
+                            <a href={restaurant.menu_url} target="_blank" rel="noopener noreferrer">
+                                <button>Menu</button>
+                            </a>
+                            <br /><br />
+                            <a href={restaurant.url} target="_blank" rel="noopener noreferrer">
+                                <button>Website</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="details-section">
-                <div className="restaurant-info">
-                    <h3>Restaurant Information</h3>
-                    <p>Country: {restaurant.country}</p>
-                    <p>Cuisines: {restaurant.cuisines}</p>
-                    <p>Cost for Two: {restaurant.cost}</p>
-                    <p>Rating: {restaurant.rating}</p>
-                </div>
-            </div>
+            ))}
         </div>
     );
 };

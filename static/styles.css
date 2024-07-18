@@ -1,0 +1,13 @@
+.restaurant-block {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.restaurant-details {
+    display: none;
+    padding: 16px;
+    border: 1px solid #000;
+    margin: 8px;
+}

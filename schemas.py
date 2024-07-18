@@ -12,6 +12,8 @@ class RestaurantBase(BaseModel):
     featured_image: str
     currency: str
     thumb: str
+    location_address: str
+    location_city: str
 
 class Restaurant(RestaurantBase):
     id: int
@@ -19,6 +21,8 @@ class Restaurant(RestaurantBase):
     location_country_id : int 
     cuisines : str
     average_cost_for_two : int
+    location_address : str
+    location_city: str
 
     class Config:
         orm_mode = True

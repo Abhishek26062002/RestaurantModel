@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="restaurants-container">
+        {% for restaurant in restaurants %}
+            <div class="restaurant-block" onclick="fetchRestaurantDetails({{ restaurant.id }})">
+                <strong>{{ restaurant.name }}</strong>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% if skip > 0 %}
+            <button onclick="changePage({{ skip - limit }}, {{ limit }})">Previous</button>
+        {% endif %}
+        {% if skip + limit < total_restaurants %}
+            <button onclick="changePage({{ skip + limit }}, {{ limit }})">Next</button>
+        {% endif %}
+    </div>
+    <div id="restaurant-details" class="restaurant-details"></div>
+
+    <script>
+        async function fetchRestaurantDetails(id) {
+            const response = await fetch(`/restaurants/${id}`);
+            const restaurant = await response.json();
+            const detailsDiv = document.getElementById('restaurant-details');
+            detailsDiv.innerHTML = `
+                <h3>${restaurant.name}</h3>
+                <p>${restaurant.description}</p>
+                <p>${restaurant.address}</p>
+            `;
+            detailsDiv.style.display = 'block';
+        }
+
+        function changePage(skip, limit) {
+            window.location.href = `/?skip=${skip}&limit=${limit}`;
+        }
+    </script>
+</body>
+</html>

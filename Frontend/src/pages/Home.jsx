@@ -31,12 +31,11 @@ const Home = () => {
   };
 
   return (
-    <div>
-      {/* <video src="../src/assets/video1.mp4" className='video'
-      autoPlay loop muted></video> */}
-      <img src="src/assets/abhishekimg.jpg" className="video" alt="Background" />
+    <div className='home'>
+      <img src="src/assets/banner.avif" className="video" alt="Background" />
       <div className='title'>
         <h1>ViyyalaVariVindhu</h1>
+        <p>Discover the best food & drinks in Visakhapatnam</p>
         <button onClick={handleViewRestaurants}>View Restaurants</button>
       </div >
       <div ref={restaurantListRef}>

@@ -16,3 +16,5 @@ class Restaurant(Base):
     featured_image = Column(String)
     currency = Column(String)
     thumb = Column(String)
+    location_address = Column(String)
+    location_city = Column(String)
