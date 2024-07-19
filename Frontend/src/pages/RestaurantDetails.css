@@ -123,3 +123,39 @@
 .menu button:not(:disabled):active {
   transform: translateY(.125rem);
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .details-section {
+      padding: 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .profile-pic-box {
+      position: static;
+      transform: none;
+      margin: 0 auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .details-section {
+      padding: 20px;
+      padding-top: 170px;
+      gap: 20px;
+    }
+  
+    .profile-pic-box {
+      padding: 10px;
+    }
+    .menu  {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding-top: 30px;
+    }
+  
+}
