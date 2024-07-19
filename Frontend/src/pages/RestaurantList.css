@@ -172,4 +172,8 @@ body {
     .search input{
         width: 250px;
     }
+    .search i{
+    padding-right: 10px;
+}
+    
 }
