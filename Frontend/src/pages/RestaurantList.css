@@ -162,3 +162,10 @@ body {
 .restaurant-details button:hover {
     background: #543315;
 }
+
+@media screen and (max-width: 480px){
+    .search {
+        width: 90%;
+
+    }
+}
