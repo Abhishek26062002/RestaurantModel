@@ -12,7 +12,7 @@ const RestaurantDetails = () => {
     useEffect(() => {
         const fetchRestaurant = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/restaurants/${id}`);
+                const response = await axios.get(`https://restaurantmodel.onrender.com/restaurants/${id}`);
                 setRestaurant(response.data);
             } catch (err) {
                 setError(err);

@@ -9,7 +9,7 @@ const useFetchRestaurant = () => {
     useEffect(() => {
         const fetchRestaurants = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/restaurants');
+                const response = await axios.get('https://restaurantmodel.onrender.com/restaurants');
                 setData(response.data);
             } catch (err) {
                 setError(err);
