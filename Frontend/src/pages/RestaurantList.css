@@ -166,6 +166,7 @@ body {
 @media screen and (max-width: 480px){
     .search {
         max-width: 90%;
+        justify-content: center;
 
     }
     .search input{
