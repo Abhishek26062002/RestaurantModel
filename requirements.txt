@@ -3,4 +3,4 @@ pandas
 sqlalchemy
 pydantic
 uvicorn
-pyscopg2
+psycopg2
