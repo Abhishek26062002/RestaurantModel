@@ -173,7 +173,8 @@ body {
         width: 250px;
     }
     .search i{
-    margin-right: 150px;
+    position: absolute;
+right: 10px;
 }
     
 }
