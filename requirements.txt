@@ -1,5 +1,5 @@
 fastapi
-panadas
+pandas
 sqlalchemy
 pydantic
 uvicorn
