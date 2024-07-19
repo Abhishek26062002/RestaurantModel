@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 origins = [
-    "http://localhost:5173", 
+    "https://restaurant-rosy-nine.vercel.app/", 
 ]
 
 app.add_middleware(
