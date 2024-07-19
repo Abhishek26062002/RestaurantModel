@@ -116,3 +116,34 @@
     }
     
 }
+@media screen and (max-width: 480px)
+{
+    .title h1
+    {
+        font-size: 1.5rem;
+    }
+    .title p
+    {
+        font-size: 1rem;
+    }
+    .title button
+    {
+        height: 40px;
+        width: 150px;
+        font-size: 1rem;
+    }
+    .video
+    {
+        height: 50%;
+    }
+    .title button 
+    {
+        height: 40px;
+        width: 180px;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+}
