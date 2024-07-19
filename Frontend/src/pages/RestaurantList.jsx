@@ -8,7 +8,7 @@ const RestaurantList = () => {
     <div className='container'>
       <div className="search">
         <input type="text" placeholder="Search for Restaurants" />
-        <button><img src="../src/assets/search.svg" alt="search" /></button>
+        <button><i class='bx bx-search-alt'></i></button>
       </div>
       <div className="body">
         <div className="restaurant-list">

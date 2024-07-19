@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <img src="src/assets/banner.avif" className="video" alt="Background" />
+      <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" className="video" alt="Background" />
       <div className='title'>
         <h1>ViyyalaVariVindhu</h1>
         <p>Discover the best food & drinks in Visakhapatnam</p>

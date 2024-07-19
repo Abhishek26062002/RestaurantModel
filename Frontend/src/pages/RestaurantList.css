@@ -29,6 +29,11 @@ body {
     border-radius: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
+.search i{
+    margin-left: 20px;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
 
 .search input {
     height: 50px;
