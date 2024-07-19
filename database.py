@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 
-DATABASE_URL = 'postgresql://postgres:Abhishek@localhost:5435/TypeFace'
+DATABASE_URL = "postgresql://restaurant_g2vk_user:R5z1Mjcrf1aK8LDSuB9rHPMejMH3kWD7@dpg-cqd3g6mehbks73bop3ng-a.oregon-postgres.render.com/restaurant_g2vk"
 
 engine = create_engine(DATABASE_URL)
 
@@ -30,8 +30,8 @@ for col in data.columns:
         data = data.drop(columns=[col]).join(flattened)
         
         
-data = data.applymap(lambda x: str(x) if isinstance(x, (dict, list)) else x)"""
-
+data = data.applymap(lambda x: str(x) if isinstance(x, (dict, list)) else x)
+"""
 
 
 Base = declarative_base()
@@ -44,4 +44,6 @@ def get_db():
         db.close()
 
 
-#data.to_sql('restaurants', engine, if_exists='replace', index=False)
+"""data.drop_duplicates(inplace=True)
+
+data.to_sql('restaurants', engine, if_exists='replace', index=False)"""
