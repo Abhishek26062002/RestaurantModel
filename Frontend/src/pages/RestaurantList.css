@@ -176,5 +176,10 @@ body {
     .search i{
     padding: 0px;
 }
+    .container {
+    padding-top: -250px;
+}
+
+
     
 }
