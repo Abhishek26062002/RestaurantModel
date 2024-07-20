@@ -177,7 +177,7 @@ body {
     position: absolute;
         right: 0%;
 top: 0%;
-transform: translate(-50% , 100%);
+transform: translate(-100% , 100%);
 }
     
 }
