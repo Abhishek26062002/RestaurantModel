@@ -168,16 +168,13 @@ body {
         max-width: 90%;
         justify-content: center;
         position: relative;
-
+        gap: 0;
     }
     .search input{
         width: 250px;
     }
     .search i{
-    position: absolute;
-        right: 0%;
-top: 0%;
-transform: translate(100% , 100%);
+    padding: 0px 20px;
 }
     
 }
