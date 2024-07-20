@@ -174,7 +174,8 @@ body {
     }
     .search i{
     position: absolute;
-right: 10px;
+top: 50%;
+transform: translate(-50% , 100%);
 }
     
 }
